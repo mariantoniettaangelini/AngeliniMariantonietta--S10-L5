@@ -1,0 +1,26 @@
+<div class="container-fluid mt-2 justify-content-center">
+  <div class="row justify-content-center">
+  <div class="col-md-6">
+    <input type="text" class="form-control my-3" [(ngModel)]="searchText" (click)="search()" placeholder="Search...">
+    <ul class="list-group mt-3">
+      <li class="list-group-item" *ngFor="let todo of filteredTodos">
+        {{todo.todo}}
+      </li>
+    </ul>
+  </div>
+  </div>
+</div>
+  <div class="container-fluid mt-2">
+  <div class="row justify-content-center ">
+    <div class="col-6 bg-warning rounded rounded-5">
+      <h1>All Tasks</h1>
+      <ul class="list-unstyled">
+        <li *ngFor="let t of postConAutore" class="mb-2">
+            <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="t.completed">
+          {{t.todo}} <br>assigned at <b>{{t.author?.firstName}} {{t.author?.lastName}}</b>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
